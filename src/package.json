@@ -2,7 +2,7 @@
   "name": "readfile-csv",
   "version": "1.0.0",
   "description": "read xlsx file based on content (string) of colum/row ",
-  "main": "index.js",
+  "main": "leitor_excel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
