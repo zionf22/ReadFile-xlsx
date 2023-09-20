@@ -4,7 +4,7 @@
 // escrever arquivo 
 
 //importar dependencias
-const fs = require("fs");
+import { readFileSync } from "fs";
 const XLSX = require("xlsx", "xls")
 
 const workbook = XLSX.readfile("carga_modelo.xlsx")
@@ -27,7 +27,7 @@ for (const sheetName of workbook.SheetNames) {
 ]
 */
 
-fs.readFileSync('/home/zion/ReadFile CSV/server/carga_modelo.xlsx', 'utf-8');
+readFileSync('/home/zion/ReadFile CSV/server/carga_modelo.xlsx', 'utf-8');
 
 //show as json
 console.log("json:\n", JSON.stringify(worksheets.Sheet1), "\n\n")
