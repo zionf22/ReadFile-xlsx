@@ -2,9 +2,11 @@
 // REGIONAL	Texto Engenharia	ItemPN
 // CLARO SP2	Link:SIMAD01-SIFLL01/Item:RSI-4849600/Site:SIMAD01	RSI-4849600
 // escrever arquivo 
+const fs = require("fs");
+const XLSX = require("xlsx", "xls")
+const json
+
 /*
-
-
 [
   {
     regional: 'CLARO SP2',
