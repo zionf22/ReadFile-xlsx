@@ -4,10 +4,10 @@
 // // escrever arquivo 
 
 // //importar dependencias
-var fs = require ("fs");
-var XLSX = require("xlsx")
+const fs = require ("fs");
+const XLSX = require("xlsx")
 
-const workbook = XLSX.readfile("carga_modelo.xlsx")
+const workbook = fs.readFileSync('/home/zion/ReadFile CSV/content/carga_modelo.xlsx', 'utf-8');
 
 // //convert xlsx to json
 let worksheets = {}; 
@@ -27,7 +27,7 @@ for (const sheetName of workbook.SheetNames) {
 // ]
 // */
 
-// readFileSync('/home/zion/ReadFile CSV/server/carga_modelo.xlsx', 'utf-8');
+// 
 
 // //show as json
  console.log("json:\n", JSON.stringify(worksheets.Sheet1), "\n\n")
