@@ -5,16 +5,23 @@
 
 // //importar dependencias
 const fs = require ("fs");
-const XLSX = require("xlsx")
+const XLSX = require("xlsx");
+   const workbook =  XLSX.readFile('/home/zion/ReadFile CSV/content/carga_modelo.xlsx');
 
-const workbook = fs.readFileSync('/home/zion/ReadFile CSV/content/carga_modelo.xlsx', 'utf-8');
+   //convert xlsx to json
+return Object.keys(workbook.Sheets).map((name) => ({
+   name,
+   data: XLSX.utils.sheet_to_json(workbook.Sheets[name], {header: 1}),
+}))
 
-// //convert xlsx to json
-let worksheets = {}; 
-for (const sheetName of workbook.SheetNames) {
+   for (let index = 2; index < 7; index++) {
+      const regional = worksheet['A${index}'].v;
+      const link = worksheet ['B${index}'].v;
 
-   worksheets[sheetName] = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-}
+      console.log({
+         regional: regional, link: link
+      })
+   }
 
 // /*
 // [
@@ -26,8 +33,6 @@ for (const sheetName of workbook.SheetNames) {
 //   }
 // ]
 // */
-
-// 
 
 // //show as json
  console.log("json:\n", JSON.stringify(worksheets.Sheet1), "\n\n")
