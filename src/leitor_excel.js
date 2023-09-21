@@ -6,6 +6,9 @@
 // //importar dependencias
 const fs = require ("fs");
 const XLSX = require("xlsx");
+
+console.log("inicio");
+
    const workbook =  XLSX.readFile('/home/zion/ReadFile CSV/content/carga_modelo.xlsx');
 
    //convert xlsx to json
@@ -33,14 +36,6 @@ return Object.keys(workbook.Sheets).map((name) => ({
 //   }
 // ]
 // */
-
-// //show as json
- console.log("json:\n", JSON.stringify(worksheets.Sheet1), "\n\n")
-
-
-console.log("inicio");
-const arquivos = fs.readdirSync('./');
-console.log(arquivos);
 
 console.log("fim");
 
